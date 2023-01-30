@@ -5,7 +5,7 @@ pipeline {
     stage('SCM') {
       steps {
        
-        sh 'ansible-playbook -i hosts playbook.yml'
+        sh 'ansible-playbook -i hosts --private-key=private-key playbook.yml'
       }
     }
   }
