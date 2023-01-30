@@ -1,0 +1,7 @@
+---
+- name: Redis installation on CentOS machine
+  yum:
+    name: redis
+    state: latest
+    update_cache: yes
+  notify: Restart_redis

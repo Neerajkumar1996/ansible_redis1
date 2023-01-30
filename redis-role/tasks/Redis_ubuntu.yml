@@ -1,0 +1,7 @@
+---
+- name: Redis installation on Ubuntu machine
+  apt:
+    name: redis
+    state: latest
+    update_cache: yes
+  notify: Restart_redis

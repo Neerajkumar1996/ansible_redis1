@@ -1,0 +1,7 @@
+---
+- name: Redis
+  hosts: all
+  become: true
+  roles: 
+  - role: redis-role
+

@@ -1,0 +1,26 @@
+daemonize yes
+pidfile /var/run/redis/{{ redis_daemon }}.pid
+port {{ redis_port }}
+bind {{ redis_bind_interface }}
+
+
+timeout {{ redis_timeout }}
+
+loglevel {{ redis_loglevel }}
+logfile {{ redis_logfile }}
+
+
+databases {{ redis_databases }}
+
+{% for save in redis_save %}
+save {{ save }}
+{% endfor %}
+
+rdbcompression {{ redis_rdbcompression }}
+dbfilename {{ redis_dbfilename }}
+dir {{ redis_dbdir }}
+
+{% if redis_requirepass %}
+requirepass {{ redis_requirepass }}
+{% endif %}
+
