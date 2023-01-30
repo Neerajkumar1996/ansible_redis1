@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
- ANSIBLE_PRIVATE_KEY=credentials(redis-ohio.pem)
+ ANSIBLE_PRIVATE_KEY=credentials('redis-ohio.pem')
  }
  
   stages {
