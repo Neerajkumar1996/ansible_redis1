@@ -1,6 +1,6 @@
 node1 ansible_user=ubuntu ansible_host=10.0.164.76
 node2 ansible_user=ubuntu ansible_host=10.0.135.41
-node3 ansible_user=ubuntu ansible_host=10.0.145.150
+#node3 ansible_user=ubuntu ansible_host=10.0.145.150
 
 
 
