@@ -1,15 +1,20 @@
 pipeline {
-  agent any
-  environment {
- ANSIBLE_PRIVATE_KEY=credentials('redis-ohio.pem')
- }
- 
-  stages {
-    stage('SCM') {
-      steps {
+    agent any
+
+    stages {
+        stage('scm') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Neerajkumar1996/ansible_redis1.git'
+            }
+        }
+    
+           stage('check out') {
+            steps {
+         ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'hosts', playbook: 'playbook.yml'
        
-       sh 'ansible-playbook -i hosts --private-key=$ANSIBLE_PRIVATE_KEY playbook.yml'
-      }
+            }
+        }
+        
+        
     }
-  }
 }
